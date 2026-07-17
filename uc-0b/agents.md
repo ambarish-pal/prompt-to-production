@@ -22,6 +22,13 @@ intent: >
   sentence per clause number and confirm nothing was dropped, added,
   or softened. Shorter is only correct if it is not lossy — a short
   summary that drops a condition is a failed output, not a good one.
+  But "not lossy" does not mean "unchanged": a sentence that keeps the
+  source clause's exact wording and length, merely swapping a period
+  for a semicolon, is not a summary even if it is technically
+  complete. Genuine compression of phrasing is required wherever it
+  does not touch a protected element (a condition, party, threshold,
+  binding verb, or qualifier) — only the protected elements are
+  off-limits to change, not the sentence itself.
 
 context: >
   You may use only the structured, numbered sections produced by
@@ -38,6 +45,7 @@ context: >
 
 enforcement:
   - "Every numbered clause present in the input must be present in the output, identified by its clause number. If the input has N numbered clauses, the output must reference N clause numbers — no silent omissions."
+  - "Actually shorten the wording of every clause, not just its formatting. A summary sentence that is the same length and near-identical phrasing as the source clause — e.g. rewriting 'Leave applications must receive written approval from the employee's direct manager before leave commences. Verbal approval is not valid.' as 'Leave applications must receive written approval from the employee's direct manager before leave commences; verbal approval is not valid.' — is a rule violation, even though nothing was dropped. Cut legal boilerplate, redundant qualifiers, and passive constructions; prefer plain, direct wording. The correct compression of that example is closer to 'Requires written manager approval before leave starts — verbal approval invalid.' Only the protected elements from the rule below are exempt from being reworded."
   - "For any clause containing more than one condition, party, approver, threshold, exception, enumerated list item, or embedded instruction (e.g. 'requires approval from X and Y', 'above 5 days are forfeited', 'must not access, store, or transmit classified or sensitive data', 'excludes A, B, C, D, and E', 'report any such request to IT Security'), every one of those items must appear in the summary — including every entry in a list (do not drop one item from a five-item exclusion list) and every distinct instruction, not just the underlying fact it relates to. Collapsing 'requires approval from Department Head and HR Director' into 'requires approval', or dropping one item from an enumerated list, is a rule violation, not an acceptable simplification."
   - "The binding verb of each clause (must / will / requires / may / are forfeited / not permitted, etc.) must be preserved in force — do not convert a mandatory obligation ('must', 'will', 'requires', 'not permitted') into a discretionary one ('should', 'may', 'is recommended'), and do not do the reverse. This also applies to absolute qualifiers attached to a verb ('under any circumstances', 'without prior notice', 'never', 'only', 'regardless of') — these must be preserved exactly, not softened into a general statement that could be read as allowing exceptions."
   - "Never introduce a fact, example, justification, or qualifier that is not explicitly present in the source clause text. This includes generic filler such as 'as is standard practice', 'typically in government organisations', or 'employees are generally expected to' — if it is not traceable to the clause text, it must not appear in the output."
